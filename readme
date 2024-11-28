@@ -1,0 +1,27 @@
+Enunciado
+Projeto de Sistema de Gerenciamento de Loja de Eletrônicos
+
+Este projeto visa desenvolver um sistema para o gerenciamento de uma loja de eletrônicos, permitindo o registro e a consulta de informações sobre produtos, fornecedores, compras e itens relacionados. O sistema deve oferecer as seguintes funcionalidades:
+
+Produtos: Registrar e gerenciar informações sobre os produtos disponíveis na loja, incluindo nome, preço e quantidade em estoque.
+Fornecedores: Registrar e gerenciar informações dos fornecedores que fornecem os produtos da loja, incluindo nome e contato.
+Compras: Registrar as compras realizadas aos fornecedores, incluindo a data da compra.
+Itens de Compra: Associar produtos comprados em cada transação de compra, especificando a quantidade de cada produto.
+Estrutura do Banco de Dados
+O banco de dados LojadeEletrônicos contém as seguintes tabelas:
+
+produtos: Armazena informações dos produtos (ID, nome, preço, estoque).
+fornecedor: Armazena informações dos fornecedores (ID, nome, contato).
+compras: Armazena informações das compras realizadas (ID, ID do fornecedor, data da compra).
+item: Armazena os itens associados a cada compra (ID, ID da compra, ID do produto, quantidade).
+Instruções de Uso
+Criar o Banco de Dados: O script cria o banco de dados LojadeEletrônicos se ele não existir e utiliza-o para as operações subsequentes.
+Criar Tabelas: O script cria as tabelas produtos, fornecedor, compras e item, definindo suas colunas e tipos de dados.
+Inserir Dados: O script insere exemplos de dados nas tabelas de produtos e fornecedores, além de registrar compras e itens.
+Requisitos
+MySQL ou MariaDB instalado.
+Acesso a um terminal para executar os comandos SQL.
+Como Executar
+Copie e cole o script SQL em um cliente MySQL.
+Execute as instruções em sequência.
+Verifique se os dados foram criados corretamente.
