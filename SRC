@@ -1,0 +1,49 @@
+create database if not exists LojadeEletrônicos;
+use LojadeEletrônicos;
+
+create table if not exists produtos ( 
+id_produto int auto_increment primary key,
+nome varchar(100),
+preco decimal(10,2),
+estoque varchar(100)
+);
+
+create table if not exists fornecedor (
+id_fornecedor int auto_increment primary key,
+nome varchar(100),
+contato varchar(50)
+);
+
+create table if not exists compras (
+id_compra int auto_increment primary key,
+id_fornecedor int,
+data_compra date
+);
+
+create table if not exists item (
+id_item int auto_increment primary key,
+id_compra int,
+id_produto int,
+quantidade varchar(100)
+);
+
+insert into produtos (nome, preco, estoque) values 
+("celular",2000,"100"),
+("computador",1500,"100"),
+("tablet",1000,"100"),
+("mouse",25,"100"),
+("teclado",45,"100"),
+("fone",70,"100");
+
+insert into fornecedor ( nome, contato) values 
+("clara","1"),
+("flavio","2"),
+("josue","3");
+
+insert into compras(data_compra) values 
+("24-11-28"),
+("24-11-25");
+
+insert into item (quantidade) values 
+("3"),
+("7");
