@@ -2,14 +2,14 @@ create database if not exists LojadeEletrônicos;
 use LojadeEletrônicos;
 
 create table if not exists produtos ( 
-id_produto int auto_increment primary key,
+produto_id int auto_increment primary key,
 nome varchar(100),
 preco decimal(10,2),
 estoque varchar(100)
 );
 
-create table if not exists fornecedor (
-id_fornecedor int auto_increment primary key,
+create table if not exists fornecedores (
+fornecedor_id int auto_increment primary key,
 nome varchar(100),
 contato varchar(50)
 );
@@ -17,14 +17,17 @@ contato varchar(50)
 create table if not exists compras (
 id_compra int auto_increment primary key,
 id_fornecedor int,
-data_compra date
+data_compra date,
+foreign key (id_fornecedor) references fornecedores (fornecedor_id)
 );
 
 create table if not exists item (
 id_item int auto_increment primary key,
-id_compra int,
+compra_id int,
 id_produto int,
-quantidade varchar(100)
+quantidade varchar(100),
+foreign key(compra_id) references compras(id_compra),
+foreign key (id_produto) references produtos(produto_id)
 );
 
 insert into produtos (nome, preco, estoque) values 
